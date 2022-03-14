@@ -1,0 +1,29 @@
+premier boucle :
+
+#include <QTimer>
+if (button2 == true)
+{
+	aff.ModifierImage("nom.image);
+	QT += 100;
+	aff.ModifierImage("nom.image);
+	QT += 100;
+	aff.modifierImage("nom.image");
+	QT += 100;
+}
+
+deuxieme boucle :
+
+if (button1==true)
+{
+	aff.ModifierImage("bleu.png");
+	aff.EnvoyerImageEtTexte();
+	sleep_for(3000ms);
+}
+
+	/*AfficheurGeant aff;
+	aff.ModifierImage("bleu.png");
+	aff.ModifierTexte("",10,50,0,255,0);  //modier le texte pour afficher du texte*/
+	aff.EnvoyerImageEtTexte();*/
+
+
+	
