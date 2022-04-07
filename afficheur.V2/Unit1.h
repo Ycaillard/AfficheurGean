@@ -10,22 +10,26 @@
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
 #include <FMX.Edit.hpp>
+#include "Unit2.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// Composants gérés par l'EDI
 	TButton *Button1;
-	TLabel *Label1;
 	TButton *Button2;
 	TEdit *Edit1;
 	TLabel *Label3;
 	TButton *Button3;
+	TImageControl *ImageControl1;
+	TLabel *Label1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall ImageControl1Change(TObject *Sender);
 
 
 private:	// Déclarations utilisateur
+	Taffiche *SecondThread;
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);
 };

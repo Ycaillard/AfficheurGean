@@ -26,4 +26,41 @@ if (button1==true)
 	aff.EnvoyerImageEtTexte();*/
 
 
+THREAD
+#include <thread>
+#include <mutex>
+#include <iostream>
+void display(int start, int nb)
+{
+	for (int i = start; i < start + nb; ++i)
+		std::cout << i << ",";
+}
+int main(){
+	std::thread t1(display, 0, 5);
+	std::thread t2([]() { display(5, 5); });
+	t1.join();
+	t2.join();
+	return 0 ;
+}
+
+	 std::thread t1.join([]() {
+	 AfficheurGeant aff;
+
+		aff.ModifierImage("bleu.png");
+		aff.EnvoyerImageEtTexte();
+		Sleep(300);
+
+		aff.ModifierImage("bleu.png");
+		aff.EnvoyerImageEtTexte();
+		Sleep(300);
+
+		aff.ModifierImage("bleu.png");
+		aff.EnvoyerImageEtTexte();
+		Sleep(300);
+
+
+	 });
+
+AfficheurGeant aff;
+
 	

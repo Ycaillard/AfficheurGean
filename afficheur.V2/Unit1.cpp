@@ -5,8 +5,11 @@
 #include "AfficheurGeant.h"
 #include <chrono>
 #include <thread>
+#include <string>
+#include <iostream>
 #include <time.h>
 #include "Unit1.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -19,30 +22,40 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-	AfficheurGeant aff;
-	int loop=1;
 
-do
-   {
+	SecondThread = new Taffiche(false); // crée et exécute le thread
+
+/*	 std::thread t1([]() {
+	 AfficheurGeant aff;
+
+		aff.ModifierImage("bleu.png");
+		aff.EnvoyerImageEtTexte();
+		Sleep(300);
+
+		aff.ModifierImage("bleu.png");
+		aff.EnvoyerImageEtTexte();
+		Sleep(300);
+
 		aff.ModifierImage("bleu.png");
 		aff.EnvoyerImageEtTexte();
 		Sleep(300);
 
 
-		aff.ModifierImage("rouge.png");
-		aff.EnvoyerImageEtTexte();
-		Sleep(300);
-
-
-		aff.ModifierImage("vert.png");
-		aff.EnvoyerImageEtTexte();
-		Sleep(300);
-   }while (loop==1);
-
+	 });
+*/
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	SecondThread->Terminate();
+/*	std::atomic_bool stop_thread_1 = false;
+	if (stop_thread_1)
+	return;
+	stop_thread_1 = true;
+	stop_thread_1 = false;
+*/
+}
+//---------------------------------------------------------------------------
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
 	SNClientTCP client;
@@ -62,13 +75,10 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-
-
-void __fastcall TForm1::Button3Click(TObject *Sender)
+void __fastcall TForm1::ImageControl1Change(TObject *Sender)
 {
-AfficheurGeant aff;
-aff.ModifierImage("blanc.png");
-aff.EnvoyerImageEtTexte();
+
+ //TForm1->TImage1->Picture->LoadFromFile("rouge.png");
 
 }
 //---------------------------------------------------------------------------
