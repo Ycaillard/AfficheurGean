@@ -6,9 +6,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 AfficheurGeant::AfficheurGeant()
-{   strcpy(IP,"172.20.21.199");
+{   strcpy(IP,"172.20.21.199");//communiquation entre l'appli et l'afficheur
 	r=100;v=100;b=255;top=50;taillePolice=20;
-	strcpy(texte,"SNIR");
+	strcpy(texte,"");
 	strcpy(nomImage,"image0.png");
 	image=new char[TAILLEIMAGEMAX];
 }

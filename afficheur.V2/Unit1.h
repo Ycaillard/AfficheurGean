@@ -21,11 +21,16 @@ __published:	// Composants gérés par l'EDI
 	TLabel *Label3;
 	TButton *Button3;
 	TImageControl *ImageControl1;
-	TLabel *Label1;
+	TRadioButton *RadioButton1;
+	TRadioButton *RadioButton2;
+	TRadioButton *RadioButton3;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall ImageControl1Change(TObject *Sender);
+	void __fastcall RadioButton1Click(TObject *Sender);
+	void __fastcall RadioButton2Click(TObject *Sender);
+	void __fastcall RadioButton3Click(TObject *Sender);
 
 
 private:	// Déclarations utilisateur

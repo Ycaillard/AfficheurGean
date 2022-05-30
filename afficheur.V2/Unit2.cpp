@@ -40,7 +40,7 @@ void __fastcall Taffiche::Execute()
 	}
  */
  AfficheurGeant aff;
- while (!Terminated)
+ while (!Terminated)     //cree la boucle du premier thread pour lancer la premier playlist
 	{
 	AfficheurGeant aff;
 
@@ -61,10 +61,11 @@ void __fastcall Taffiche::Execute()
 	   Synchronize(&UpdateCaption);
 
 	}
+   /*	Form1->ImageControl1->FImage     */
 }
 //---------------------------------------------------------------------------
 
 void __fastcall Taffiche::UpdateCaption()
 {
-	Form1->Label1->Text = i;
+
 }
